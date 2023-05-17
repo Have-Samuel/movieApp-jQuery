@@ -15,10 +15,16 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #635656;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   gap: 1rem;
 }
@@ -39,13 +45,19 @@ input {
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
   background-color: #333;
   color: #fff;
   cursor: pointer;
-  width: 50%;
+  /* width: 30%;
+  min-width: 20%; */
 }
 
 button:hover,
