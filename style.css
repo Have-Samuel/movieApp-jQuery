@@ -10,15 +10,17 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: #f4f4f4;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-img {
-  max-width: 70%;
-}
-
-.image-center {
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  gap: 1rem;
 }
