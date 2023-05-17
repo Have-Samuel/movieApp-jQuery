@@ -1,4 +1,4 @@
 /* eslint-disable no-undef */
-$('#movie-form').on('sibmut', (e) => {
+$('#movie-form').on('submit', (e) => {
   e.preventDefault();
 });
