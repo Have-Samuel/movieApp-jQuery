@@ -9,14 +9,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Movie App</h1>
-  <form id="movie-form">
-    <label for="">Movie Name</label>
-    <input type="text" placeholder="Search..." id="search">
-    <label for="">Ratings</label>
-    <input type="text" placeholder="Ratings" id="rate-me">
-    <button type="submit">Search</button>
-  </form>
+  <!--Movie App -->
+
+  <div class="container">
+    <div class="search-box">
+      <input type="text" placeholder="Search for a movie..." class="search-input">
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <div class="movie-list">
+      <div class="movie">
+        <div class="movie-img">
+          <img src="https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <div class="movie-title">
+            <span>Avengers: Infinity War</span>
+            <span>2018</span>
+          </div>
+          <div class="movie-category">
+            <span>Action</span>
+            <span>Adventure</span>
+            <span>Fantasy</span>
+          </div>
+          <div class="movie-rating">
+            <span>Rating: 8.5</span>
+            <span>Votes: 1234</span>
+          </div>
+        </div>
+      </div>
+    </div>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </body>
 </html>
