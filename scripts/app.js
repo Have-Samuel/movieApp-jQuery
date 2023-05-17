@@ -3,7 +3,15 @@
 
 // getMovies Functiono
 function getMovies(searchText) {
-  console.log(searchText);
+  // Make a request to the API Using Axios
+  axios.get(`http://www.omdbapi.com/?apikey=thewdb&s=${searchText}`);
+  // returns a promise
+  then((response) => {
+    console.log(response);
+  })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 $(document).ready(() => {
