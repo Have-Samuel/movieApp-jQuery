@@ -1,0 +1,10 @@
+img {
+  max-width: 70%;
+}
+
+.image-center {
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
