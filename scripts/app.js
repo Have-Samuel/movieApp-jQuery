@@ -45,20 +45,28 @@ function getMovie() {
   // returns a promise
   then((response) => {
     console.log(response);
-    const movies = response.data.Search;
-    let output = '';
-    $.each(movies, (index, movie) => {
-      output += `
-      <div class="col-md-3">
-        <div class="well text-center">
-          <img src="${movie.Poster}">
-          <h5>${movie.Title}</h5>
-          <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Movie Details</a>
-        </div>
+    const movie = response.data;
+    // Not a loop, bse we are only getting one movie
+    let output = `
+    <div class="row">
+      <div claas="col-md-4">
+        <img src="${movie.Poster}" class="thumbnail">
       </div>
-      `;
-    });
-    $('#movies').html(output);
+      <div class="col-md-8">
+      <h2>${movie.Title}</h2>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Genre:</strong>${movie.Genre}</li>
+        <li class="list-group-item"><strong>Released:</strong>${movie.Released}</li>
+        <li class="list-group-item"><strong>Rated:</strong>${movie.Rated}</li>
+        <li class="list-group-item"><strong>IMDB Rating:</strong>${movie.imdbRating}</li>
+        <li class="list-group-item"><strong>Director:</strong>${movie.Director}</li>
+        <li class="list-group-item"><strong>Writer:</strong>${movie.Writer}</li>
+        <li class="list-group-item"><strong>Actors:</strong>${movie.Actors}</li>
+      </ul>
+      </div>
+    </div>
+    `;
+    $('#movie').html(output);
   })
     .catch((error) => {
       console.log(error);
