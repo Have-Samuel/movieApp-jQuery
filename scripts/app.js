@@ -87,6 +87,8 @@ $(document).ready(() => {
   $('#searchForm').on('submit', (eve) => {
     const searchText = $('#searchText').val();
     getMovies(searchText);
+    movieSelected(id);
+    getMovie();
     eve.preventDefault();
   });
 });
