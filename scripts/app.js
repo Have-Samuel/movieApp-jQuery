@@ -6,7 +6,7 @@ function getMovies(searchText) {
   // Make a request to the API Using Axios
   axios.get(`http://www.omdbapi.com/?s=${searchText}`);
   // returns a promise
-  then((response) => {
+  .then((response) => {
     // console.log(response);
     const movies = response.data.Search;
     let output = '';
@@ -43,7 +43,7 @@ function getMovie() {
   // Making another request using Axios
   axios.get(`http://www.omdbapi.com/?i=${searchText}`);
   // returns a promise
-  then((response) => {
+  .then((response) => {
     console.log(response);
     const movie = response.data;
     // Not a loop, bse we are only getting one movie
