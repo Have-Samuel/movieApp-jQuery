@@ -28,6 +28,15 @@ function getMovies(searchText) {
     });
 }
 
+// Movie Selected Function
+function movieSelected(id) {
+  // Store the id in session storage, so when browser is closed, the id is removed
+  sessionStorage.setItem('movieId', id);
+  // Redirect to the movie.html page
+  window.location = 'movie.html';
+  return false;
+}
+
 $(document).ready(() => {
   // Create an Event Listener for the form submission
   $('#searchForm').on('submit', (eve) => {
