@@ -4,14 +4,14 @@
 // getMovies Functiono
 function getMovies(searchText) {
   // Make a request to the API Using Axios
-  axios.get(`http://www.omdbapi.com/?s=${searchText}`);
+  axios.get(`http://www.omdbapi.com/?s=${searchText}`)
   // returns a promise
-  .then((response) => {
+    .then((response) => {
     // console.log(response);
-    const movies = response.data.Search;
-    let output = '';
-    $.each(movies, (index, movie) => {
-      output += `
+      const movies = response.data.Search;
+      let output = '';
+      $.each(movies, (index, movie) => {
+        output += `
       <div class="col-md-3">
         <div class="well text-center">
           <img src="${movie.Poster}">
@@ -20,9 +20,9 @@ function getMovies(searchText) {
         </div>
       </div>
       `;
-    });
-    $('#movies').html(output);
-  })
+      });
+      $('#movies').html(output);
+    })
     .catch((error) => {
       console.log(error);
     });
@@ -41,13 +41,13 @@ function movieSelected(id) {
 function getMovie() {
   const movieId = sessionStorage.getItem('movieId');
   // Making another request using Axios
-  axios.get(`http://www.omdbapi.com/?i=${searchText}`);
+  axios.get(`http://www.omdbapi.com/?i=${searchText}`)
   // returns a promise
-  .then((response) => {
-    console.log(response);
-    const movie = response.data;
-    // Not a loop, bse we are only getting one movie
-    const output = `
+    .then((response) => {
+      console.log(response);
+      const movie = response.data;
+      // Not a loop, bse we are only getting one movie
+      const output = `
     <div class="row">
       <div claas="col-md-4">
         <img src="${movie.Poster}" class="thumbnail">
@@ -75,8 +75,8 @@ function getMovie() {
       </div>
     </div>
     `;
-    $('#movie').html(output);
-  })
+      $('#movie').html(output);
+    })
     .catch((error) => {
       console.log(error);
     });
