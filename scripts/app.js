@@ -4,10 +4,24 @@
 // getMovies Functiono
 function getMovies(searchText) {
   // Make a request to the API Using Axios
-  axios.get(`http://www.omdbapi.com/?apikey=thewdb&s=${searchText}`);
+  axios.get(`http://www.omdbapi.com/?s=${searchText}`);
   // returns a promise
   then((response) => {
     console.log(response);
+    const movies = response.data.Search;
+    let output = '';
+    $.each(movies, (index, movie) => {
+      output += `
+      <div class="col-md-3">
+        <div class="well text-center">
+          <img src="${movie.Poster}">
+          <h5>${movie.Title}</h5>
+          <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Movie Details</a>
+        </div>
+      </div>
+      `;
+    });
+    $('#movies').html(output);
   })
     .catch((error) => {
       console.log(error);
