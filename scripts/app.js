@@ -37,6 +37,34 @@ function movieSelected(id) {
   return false;
 }
 
+// Get Movie Function
+function getMovie() {
+  const movieId = sessionStorage.getItem('movieId');
+  // Making another request using Axios
+  axios.get(`http://www.omdbapi.com/?i=${searchText}`);
+  // returns a promise
+  then((response) => {
+    console.log(response);
+    const movies = response.data.Search;
+    let output = '';
+    $.each(movies, (index, movie) => {
+      output += `
+      <div class="col-md-3">
+        <div class="well text-center">
+          <img src="${movie.Poster}">
+          <h5>${movie.Title}</h5>
+          <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Movie Details</a>
+        </div>
+      </div>
+      `;
+    });
+    $('#movies').html(output);
+  })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
 $(document).ready(() => {
   // Create an Event Listener for the form submission
   $('#searchForm').on('submit', (eve) => {
