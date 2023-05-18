@@ -7,7 +7,7 @@ function getMovies(searchText) {
   axios.get(`http://www.omdbapi.com/?s=${searchText}`);
   // returns a promise
   then((response) => {
-    console.log(response);
+    // console.log(response);
     const movies = response.data.Search;
     let output = '';
     $.each(movies, (index, movie) => {
@@ -47,7 +47,7 @@ function getMovie() {
     console.log(response);
     const movie = response.data;
     // Not a loop, bse we are only getting one movie
-    let output = `
+    const output = `
     <div class="row">
       <div claas="col-md-4">
         <img src="${movie.Poster}" class="thumbnail">
