@@ -15,8 +15,8 @@ $(document).ready(() => {
 
     // Make an AJAX request to the OMDB API
     $.ajax({
-      url: `${url}&t=${movie}`,
       method: 'GET',
+      url: `${url}&t=${movie}`,
       success(data) {
         console.log(data);
       },
