@@ -85,6 +85,7 @@ function getMovie() {
 $(document).ready(() => {
   // Create an Event Listener for the form submission
   $('#searchForm').on('submit', (eve) => {
+    // console.log($('#searchText').val());
     const searchText = $('#searchText').val();
     getMovies(searchText);
     movieSelected(id);
