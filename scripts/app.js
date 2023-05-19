@@ -11,13 +11,16 @@ $(document).ready(() => {
 
     const movie = $('#searchText').val();
 
+    // Declare our result variable
+    const result = '';
+
     const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
     // Make an AJAX request to the OMDB API
     $.ajax({
       method: 'GET',
       url: `${url}&t=${movie}`,
-      success(data) {
+      success: (data) => {
         console.log(data);
       },
     });
