@@ -1,95 +1,25 @@
 /* eslint-disable no-undef */
-// Catch the submission of the form and send the data using AJAX
 
-// getMovies Functiono
-function getMovies(searchText) {
-  // Make a request to the API Using Axios
-  axios.get(`http://www.omdbapi.com/?s=${searchText}`)
-  // returns a promise
-    .then((response) => {
-    // console.log(response);
-      const movies = response.data.Search;
-      let output = '';
-      $.each(movies, (index, movie) => {
-        output += `
-      <div class="col-md-3">
-        <div class="well text-center">
-          <img src="${movie.Poster}">
-          <h5>${movie.Title}</h5>
-          <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Movie Details</a>
-        </div>
-      </div>
-      `;
-      });
-      $('#movies').html(output);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
+// API Key
+const apiKey = 'dd7c4785';
 
-// Movie Selected Function
-function movieSelected(id) {
-  // Store the id in session storage, so when browser is closed, the id is removed
-  sessionStorage.setItem('movieId', id);
-  // Redirect to the movie.html page
-  window.location = 'movie.html';
-  return false;
-}
-
-// Get Movie Function
-function getMovie() {
-  const movieId = sessionStorage.getItem('movieId');
-  // Making another request using Axios
-  axios.get(`http://www.omdbapi.com/?i=${searchText}`)
-  // returns a promise
-    .then((response) => {
-      console.log(response);
-      const movie = response.data;
-      // Not a loop, bse we are only getting one movie
-      const output = `
-    <div class="row">
-      <div claas="col-md-4">
-        <img src="${movie.Poster}" class="thumbnail">
-      </div>
-      <div class="col-md-8">
-      <h2>${movie.Title}</h2>
-      <ul class="list-group">  
-        <li class="list-group-item"><strong>Genre:</strong>${movie.Genre}</li>
-        <li class="list-group-item"><strong>Released:</strong>${movie.Released}</li>
-        <li class="list-group-item"><strong>Rated:</strong>${movie.Rated}</li>
-        <li class="list-group-item"><strong>IMDB Rating:</strong>${movie.imdbRating}</li>
-        <li class="list-group-item"><strong>Director:</strong>${movie.Director}</li>
-        <li class="list-group-item"><strong>Writer:</strong>${movie.Writer}</li>
-        <li class="list-group-item"><strong>Actors:</strong>${movie.Actors}</li>
-      </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="well">
-        <h3>Plot</h3>
-        ${movie.Plot}
-        <hr>
-        <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-        <a href="index.html" class="btn btn-default">Go Back To Search</a>
-      </div>
-    </div>
-    `;
-      $('#movie').html(output);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-
+// When the form is submitted,
 $(document).ready(() => {
   // Create an Event Listener for the form submission
-  $('#searchForm').on('submit', (eve) => {
-    // console.log($('#searchText').val());
-    const searchText = $('#searchText').val();
-    getMovies(searchText);
-    movieSelected(id);
-    getMovie();
+  $('#searchForm').submit((eve) => {
     eve.preventDefault();
+
+    const movie = $('#searchText').val();
+
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
+
+    // Make an AJAX request to the OMDB API
+    $.ajax({
+      url: `${url}&t=${movie}`,
+      method: 'GET',
+      success(data) {
+        console.log(data);
+      },
+    });
   });
 });
