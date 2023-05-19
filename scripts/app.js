@@ -12,7 +12,7 @@ $(document).ready(() => {
     const movie = $('#searchText').val();
 
     // Declare our result variable
-    const result = '';
+    let result = '';
 
     const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
@@ -22,6 +22,11 @@ $(document).ready(() => {
       url: `${url}&t=${movie}`,
       success: (data) => {
         console.log(data);
+
+        result = `
+          <img style="float:left" class="img-thumbnail" width="200" height="200" src=${data.Poster}/>
+        `;
+        $('#result').html(result);
       },
     });
   });
