@@ -26,7 +26,7 @@ $(document).ready(() => {
         result = `
           <img style="float:left" class="img-thumbnail" width="200" height="200" src=${data.Poster}/>
         `;
-        $('#result').html(result);
+        $('#movies').html(result);
       },
     });
   });
