@@ -9,7 +9,7 @@ $(document).ready(() => {
   $('#searchForm').submit((eve) => {
     eve.preventDefault();
 
-    const movie = $('#searchText').val();
+    const movies = $('#searchText').val();
 
     // Declare our result variable
     let result = '';
@@ -19,14 +19,14 @@ $(document).ready(() => {
     // Make an AJAX request to the OMDB API
     $.ajax({
       method: 'GET',
-      url: `${url}&t=${movie}`,
+      url: `${url}&t=${movies}`,
       success: (data) => {
         console.log(data);
 
         result = `
           <img style="float:left" class="img-thumbnail" width="200" height="200" src=${data.Poster}/>
         `;
-        $('#result').html(result);
+        $('#movies').html(result);
       },
     });
   });
