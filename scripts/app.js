@@ -14,7 +14,7 @@ $(document).ready(() => {
     // Declare our result variable
     let result = '';
 
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
+    const url = `http://www.omdbapi.com/?sapikey=${apiKey}`;
 
     // Make an AJAX request to the OMDB API
     $.ajax({
