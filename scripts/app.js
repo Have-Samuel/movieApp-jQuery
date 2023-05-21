@@ -32,7 +32,7 @@ $(document).ready(() => {
     //     $('#movies').html(result);
     //   },
     // });
-    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=${apiKey},${movies}`)
+    axios.get(`http://www.omdbapi.com/?=tt3896198&apikey=${apiKey},${movies}`)
       .then((response) => {
         console.log(response);
       })
