@@ -1,1 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #292626;
+}
+
+#movies img,
+#movie img {
+  width: 100%;
+}
+
+#movie {
+  height: 390px;
+}
+
+#movies .col-md-3 img {
+  height: 240px;
+}
