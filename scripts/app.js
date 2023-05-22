@@ -28,7 +28,7 @@ $(document).ready(() => {
           result += `
             <div class="col-md-3">
               <div class="well text-center">
-                <imgsrc="${movie.Poster}">
+                <img src="${movie.Poster}">
                 <h5>${movie.Title}</h5>
                 <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-danger" href="#">Movie Details</a>
               </div>
