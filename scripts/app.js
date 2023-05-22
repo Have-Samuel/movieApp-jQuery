@@ -14,13 +14,13 @@ $(document).ready(() => {
     // Declare our result variable
     let result = '';
 
-    const url = `http://www.omdbapi.com/?=${apiKey}`;
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
     // const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}`;
 
     // Make an AJAX request to the OMDB API
     $.ajax({
       method: 'GET',
-      url: `${url}&t=${movies}`,
+      url: `${url}&s=${movies}`,
       success: (data) => {
         console.log(data);
 
