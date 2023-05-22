@@ -23,10 +23,18 @@ $(document).ready(() => {
       url: `${url}&s=${movies}`,
       success: (data) => {
         console.log(data);
-
-        result = `
-          <img style="float:left" class="img-thumbnail" width="200" height="200" src=${data.Poster}/>
-        `;
+        const movies = data.Search;
+        $.each(movies, (index, movie) => {
+          result += `
+            <div class="col-md-3">
+              <div class="well text-center">
+                <imgsrc="${movie.Poster}">
+                <h5>${movie.Title}</h5>
+                <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-danger" href="#">Movie Details</a>
+              </div>
+            </div>
+          `;
+        });
         $('#movies').html(result);
       },
     });
