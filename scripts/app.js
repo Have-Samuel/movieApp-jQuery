@@ -11,11 +11,9 @@ $(document).ready(() => {
 
     const movies = $('#searchText').val();
 
-    // Declare our result variable
     let result = '';
 
     const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
-    // const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}`;
 
     // Make an AJAX request to the OMDB API
     $.ajax({
@@ -38,12 +36,5 @@ $(document).ready(() => {
         $('#movies').html(result);
       },
     });
-    // axios.get(`http://www.omdbapi.com/?=tt3896198&apikey=${apiKey},${movies}`)
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   });
 });
