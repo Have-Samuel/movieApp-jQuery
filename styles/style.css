@@ -16,10 +16,10 @@ body {
 
 @media (min-width: 960px) {
   #movie {
-    height: 390px;
+    /* height: 390px; */
   }
 
   #movies .col-md-3 img {
-    height: 340px;
+    /* height: 340px; */
   }
 }

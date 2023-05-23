@@ -20,7 +20,7 @@ $(document).ready(() => {
       method: 'GET',
       url: `${url}&s=${movies}`,
       success: (data) => {
-        console.log(data);
+        // console.log(data);
         const movies = data.Search;
         $.each(movies, (index, movie) => {
           result += `
