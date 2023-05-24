@@ -19,18 +19,7 @@
   </nav>
 
   <div class="container">
-    <div class="jumbotron">
-      <h1 class="text-center">Search For Any Movie</h1>
-      <form id="searchForm">
-        <input type="text" class="form-control" id="searchText" placeholder="Search Movie...">
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block mt-2 form-control">Search Movie</button>
-        </div>
-      </form>
-  </div>
-  </div>
-  <div class="container">
-    <div id="movies" class="row"></div>
+    <div id="movie" class="well"></div>
   </div>
   
   <!-- <div class="container">
@@ -50,5 +39,8 @@
     </div> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script>
+    getMovie();
+  </script>
 </body>
 </html>
