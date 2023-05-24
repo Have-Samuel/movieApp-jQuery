@@ -38,3 +38,35 @@ $(document).ready(() => {
     });
   });
 });
+
+// passing data from one page to another
+function movieSelected(id) {
+  sessionStorage.setItem(movieId, id);
+  window.location = 'movie.html';
+  return false;
+}
+
+function getMovie() {
+  let moveId = sessionStorage.setItem('movieId');
+
+  $.ajax({
+    method: 'GET',
+    url: `${url}&i=${movieId}`,
+    success: (data) => {
+      // console.log(data);
+      const movies = data.Search;
+      $.each(movies, (index, movie) => {
+        result += `
+          <div class="col-md-3">
+            <div class="well text-center">
+              <img src="${movie.Poster}">
+              <h5>${movie.Title}</h5>
+              <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-danger" href="#">Movie Details</a>
+            </div>
+          </div>
+        `;
+      });
+      $('#movies').html(result);
+    },
+  });
+}
