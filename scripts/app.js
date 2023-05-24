@@ -73,7 +73,7 @@ $(document).ready(() => {
       },
     });
   });
-  // movieSelected();
+  movieSelected(id);
 });
 
 // passing data from one page to another
