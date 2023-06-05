@@ -8,18 +8,3 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #292626;
 }
-
-#movies img,
-#movie img {
-  width: 100%;
-}
-
-@media (min-width: 960px) {
-  #movie {
-    /* height: 390px; */
-  }
-
-  #movies .col-md-3 img {
-    /* height: 340px; */
-  }
-}
