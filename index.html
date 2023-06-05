@@ -4,27 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-  <script src="js/jQuery-2.2.4.min.js"></script>
-  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="scripts/app.js"></script>
   <title>Movie App By jQuery</title>
 </head>
 <body>
-  <div data-role="page" id="home" >
-    <div data-role="header" data-theme="c">
-      <h1>Movies</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Movie App</h1>
+        <hr>
+      </div>
     </div>
-    <div data-role="main">
-      <form id="searchForm">
-        <div class="ui-field-contain">
-          <input type="text" name="searchText" id="seacrhText" placeholder="Search For A Movie..." >
-        </div>
-      </form>
-      <div id="movies" data-role="listview" class="ui-grid-a"></div>
+    <div class="row">
+      <div class="col-12">
+        <form id="searchForm">
+          <input type="text" class="form-control" id="searchText" placeholder="Search Movies...">
+        </form>
+      </div>
     </div>
-    <div data-role="footer" data-theme="b" data-position="fixed"></div>
-      <h4>Movie App &copy; 2023</h4>
-  </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="movies" class="row"></div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </body>
 </html>
