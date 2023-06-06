@@ -9,25 +9,28 @@
   <title>Movie App By jQuery</title>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Movie App</h1>
-        <hr>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand">Movie App</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
+  </nav>
+
+   <div class="container">
+      <div class="jumbotron">
+        <h3 class="text-center">Search For Movies</h3>
         <form id="searchForm">
           <input type="text" class="form-control" id="searchText" placeholder="Search Movies...">
         </form>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div id="movies" class="row"></div>
-      </div>
+   </div>
+
+    <div class="container">
+      <div id="movies" class="row"></div>
     </div>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
