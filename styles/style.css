@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
 body {
@@ -9,17 +10,20 @@ body {
   background-color: #292626;
 }
 
-#movies img,
-#movie img {
+#movies img #movie img {
   width: 100%;
+  height: 100%;
+  margin-top: 1rem;
 }
 
 @media (min-width: 960px) {
-  #movie {
-    /* height: 390px; */
+  #movies .col-md-3 .well {
+    height: 390px;
+    margin-top: 1rem;
   }
 
   #movies .col-md-3 img {
-    /* height: 340px; */
+    height: 100%;
+    margin-top: 1rem;
   }
 }
