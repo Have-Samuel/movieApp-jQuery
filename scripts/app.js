@@ -3,7 +3,7 @@
 function getMovies(searchText) {
   axios.get(`http://www.omdbapi.com/?apikey=thewdb&s=${searchText}`)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       const movies = response.data.Search;
       let output = '';
       $.each(movies, (index, movie) => {
@@ -20,7 +20,7 @@ function getMovies(searchText) {
       $('#movies').html(output);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
     });
 }
 
@@ -73,7 +73,7 @@ function getMovie() {
       $('#movie').html(output);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
     });
 }
 
