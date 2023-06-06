@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-  <script src="js/jQuery-2.2.4.min.js"></script>
-  <script src="js/jquery.mobile-1.4.5.min.js"></script><title>Movie App By jQuery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="scripts/app.js"></script>
+  <title>Movie App By jQuery</title>
 </head>
 <body>
-  
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand">Movie App</a>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+      <div id="movie" class="well"></div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="scripts/app.js"></script>
+  <script>
+    getMovie();
+  </script>
 </body>
 </html>
